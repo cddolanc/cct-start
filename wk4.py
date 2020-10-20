@@ -67,15 +67,67 @@
 
 
 
-while True: # This is an infinite loop
-  number = int(input("Please type a number between 1 and 10: ")) # Take user input
+# while True: # This is an infinite loop
+#   number = int(input("Please type a number between 1 and 10: ")) # Take user input
 
-  if number < 1: # Number is too small
-    print("Number provided is less than 1")
+#   if number < 1: # Number is too small
+#     print("Number provided is less than 1")
 
-  elif number > 10: # Number is too large
-    print("Number provided is greater than 10")
+#   elif number > 10: # Number is too large
+#     print("Number provided is greater than 10")
 
-  else: # If the input is in a valid range
-    print("Number is between 1 and 10")
-    break # End the loop
+#   else: # If the input is in a valid range
+#     print("Number is between 1 and 10")
+#     break # End the loop
+
+
+# valid_input = False # Used to mark if input is valid
+
+# while not valid_input: # Loop when valid input is False
+#   number = int(input("Please type a number between 1 and 10: ")) # Take user input
+
+#   if number < 1: # Number is too small
+#     print("Number provided is less than 1")
+
+#   elif number > 10: # Number is too large
+#     print("Number provided is greater than 10")
+
+#   else: # If the input is in a valid range
+#     valid_input = True # End the loop
+
+
+# for number in range(5,11):
+#     print(number)
+
+
+
+# for number in range(11):
+#     print(number)
+
+
+# # Gameloop
+# while turns < 100:             # Game goes until 100 score
+#     player_move(player_one) # Player one's move
+#     player_move(player_two) # Player two's move
+#     turns += 1
+
+# if player_one.score > player_two.score:
+#     print("Player One Wins!")
+# elif player_one.score < player_two.score:
+#     print("Player Two Wins!")
+
+
+def greet(name="John doe", greeting="Hello there: "):
+    """Greets a person with the greeting and their name
+
+    Parameters
+    ----------
+    name: (str)
+        The name to greet by.
+    greeting: (str)
+        The greeting to greet by.
+    """
+    print(name, greeting)
+
+    greet()
+    

@@ -7,7 +7,7 @@
     'the number is odd'.
 """
 num1 = int(input("Please enter a number: ")),
-if num1 % 2 == 0: 
+if (num1 % 2) == 0: 
  print(" Even ") 
 
 
@@ -27,6 +27,11 @@ if num1 % 2 == 0:
     
     Hint: You should have between 6-7 if/elif/else statements
 """
+
+numb2 =input("Please enter a number"),
+numb2 = int
+if numb2: 
+    
 
 """
     =========== Challenge 3 =============
