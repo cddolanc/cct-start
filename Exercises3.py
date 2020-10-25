@@ -7,17 +7,17 @@
     after the operations that have been done to it.
 """
 
-result = 0
-number_1 = 5
-number_1 += 52
+# result = 0
+# number_1 = 5
+# number_1 += 52
 
-# Do more operations on number 1 until it equals eleven
-print(number_1)
-number_1 = (number_1 //3)
-number_1 -= 8
-print(number_1)
-result = number_1
-print(result == 11)
+# # Do more operations on number 1 until it equals eleven
+# print(number_1)
+# number_1 = (number_1 //3)
+# number_1 -= 8
+# print(number_1)
+# result = number_1
+# print(result == 11)
 
 
 """
@@ -33,8 +33,30 @@ print(result == 11)
     Hint: Use if, elif and else statements.
 """
 
-number_2 = input("Please enter a number : ")
-print(int(number_2))
+# number_2 = int(input("Please enter a number between 1 and 10 : "))
+# print(number_2)
+# if (number_2 < 0) or (number_2 >10):
+#     print('Out of range!')
+# elif number_2 == 1:
+#     print('One')
+# elif number_2 == 2:
+#     print('Two')
+# elif number_2 ==3:
+#     print('Three')
+# elif number_2 ==4:
+#     print('Four')
+# elif number_2 ==5:
+#     print('Five')
+# elif number_2 ==6:
+#     print('Six')
+# elif number_2 ==7:
+#     print('Seven')
+# elif number_2 ==8:
+#     print('Eight')
+# elif number_2 ==9:
+#     print('Three')
+# elif number_2 ==10:
+#     print('Ten')
 
 
 """
