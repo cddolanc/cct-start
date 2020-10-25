@@ -1,3 +1,5 @@
+import numbers
+
 """
     =========== Challenge 1 =============
 
@@ -6,10 +8,18 @@
     print 'the number is even' otherwise print
     'the number is odd'.
 """
-num1 = int(input("Please enter a number: ")),
-if (num1 % 2) == 0: 
- print(" Even ") 
+# num1 = int(input("Please enter a number: "))
+# print(num1),
+# if (num1 % 2) == 0: 
+#  print(num1, "is Even "),
+# else:
+#      print(num1,"is Odd ")
 
+# num = int(input("Enter a number: "))
+# if (num % 2) == 0:
+#    print("{0} is Even".format(num))
+# else:
+#    print("{0} is Odd".format(num))
 
 """
     =========== Challenge 2 =============
@@ -28,10 +38,21 @@ if (num1 % 2) == 0:
     Hint: You should have between 6-7 if/elif/else statements
 """
 
-numb2 =input("Please enter a number"),
-numb2 = int
-if numb2: 
-    
+# num2 = int(input("Please enter a number between 1 and 5: "))
+# print(num2),
+# if (num2 < 1) or (num2 > 5): # Number is too big or too small
+#   print("value not between 1-5 please try again"),
+
+# if num2 == 1:
+#     print(num2 +10)
+# if num2 == 2:
+#     print(num2 +9)
+# if num2 == 3:
+#     print(num2 +8)
+# if num2 == 4:
+#     print(num2 +7)   
+# elif num2 == 5:
+#     print(num2 +6)
 
 """
     =========== Challenge 3 =============
@@ -65,3 +86,13 @@ if numb2:
         3. If the string ends with "yes" print "Ends in yes"
         Otherwise print "None of the conditions have been met"
 """
+x = input('Please enter a statement with all numbers or letters :')
+if x.isdigit():
+    print("All numbers"),
+elif x.islower():
+    print("All lowercase"),
+elif x.endswith('yes'):
+    print('Ends in yes'),
+
+else:
+    print("None of the conditions have been met")
