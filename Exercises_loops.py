@@ -35,7 +35,5 @@ while counter < amount_to_add:
     counter +=1
     shopping_list.append(items_add) # Remove this and replace with your own loop body logic 
     
-
-print(shopping_list)
 if counter <= amount_to_add:
     print('That''s all the items added:', shopping_list),
