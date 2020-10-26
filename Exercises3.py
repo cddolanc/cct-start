@@ -68,11 +68,11 @@
     and check if you were right.
 """
 
-number = 0
-number += 15
-number //= 2
-number *= 6
-number -= 4
+number = 0 # less than 10
+number += 15 # between 20 and 30
+number //= 2 # between 10 and 20
+number *= 6 # 7*6 ¯\_(ツ)_/¯
+number -= 4 # between 30 and 40
 print(number)
 if number < 10:
   print("Less than 10")

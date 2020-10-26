@@ -89,8 +89,10 @@ import numbers
 x = input('Please enter a statement with all numbers or letters :')
 if x.isdigit():
     print("All numbers"),
+    
 elif x.islower():
     print("All lowercase"),
+
 elif x.endswith('yes'):
     print('Ends in yes'),
 
