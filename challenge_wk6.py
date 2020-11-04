@@ -59,6 +59,6 @@ def challenge_two():
 """
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 #     challenge_one()
-    # challenge_two() # uncomment after completing challenge_one()
+    challenge_two() # uncomment after completing challenge_one()
