@@ -41,3 +41,16 @@ def askint():
         print(val)
 
 askint()
+
+
+from math import sqrt
+
+def ask():
+    while True:
+        try:
+            number1 = int(input('Please enter an integer: ')
+                print(sqrt(number1)
+        except:
+            print("That is not an integer!")
+
+ask()
