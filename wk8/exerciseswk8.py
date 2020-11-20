@@ -20,12 +20,17 @@
 from math import sqrt
 
 def ask():
-
-while True:
-    try:
-        number1 = int(input('Please enter an integer: '),
-        print(sqrt(number1)
-    except:
-        print("That is not an integer!")
-
+    while True:
+        try:
+            val = int(input("Please enter an integer: "))
+        except:
+            print("That is not an integer!")
+            continue
+        else:
+            print("Yep That's an integer!")
+            print(sqrt(val))
+            break
+        finally:
+            print("Finally, I executed!")
+            
 ask()
