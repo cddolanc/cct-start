@@ -149,8 +149,47 @@
 # # print(map(word_lengths, phrase))
 
 
-#prob1:
-def word_lengths(phrase):    
-     return list(map(len,phrase.split()))
+# #prob1:
+# def word_lengths(phrase):    
+#      return list(map(len,phrase.split()))
 
-print(word_lengths = ('How, long, are, the, words, in, this, phrase'))
+# print(word_lengths('How, long, are, the, words, in, this, phrase'))
+
+
+
+
+# from functools import reduce
+
+# def digits_to_num(digits):    
+#     return reduce(lambda x,y:x*10 + y,digits)
+
+# print(digits_to_num([3,4,3,2,1]))
+
+
+
+# def filter_words(word_list, letter):
+#     return list(filter(lambda word:word[0]==letter,word_list))
+
+# l = ['hello','are','cat','dog','ham','hi','go','to','heart']
+# print(filter_words(l,'h'))
+
+
+
+
+def concatenate(L1, L2, connector):    
+    return list(zip(L1,connector,L2))
+
+print(concatenate(['A','B'],['a','b'],'-'))
+
+
+# def d_list(L):    
+#     pass
+
+# d_list(['a','b','c'])
+
+
+
+# def count_match_index(L):
+#     pass
+
+# count_match_index([0,2,2,1,5,5,6,10])
