@@ -11,20 +11,21 @@ def clear():
 def display_board(board):
     clear()
     bright_yellow = "\033[0;93m"
-    print(bright_yellow + '     |     |')
-    print(bright_yellow + '7: ' + board[7] + ' |8: ' + board[8] + ' |9: ' + board[9])
-    print(bright_yellow + '     |     |')
-    print(bright_yellow + '------------------')
-    print(bright_yellow + '     |     |')
-    print(bright_yellow + '4: ' + board[4] + ' |5: ' + board[5] + ' |6: ' + board[6])
-    print(bright_yellow + '     |     |')
-    print(bright_yellow + '------------------')
-    print(bright_yellow + '     |     |')
-    print('1: ' + board[1] + ' |2: ' + board[2] + ' |3: ' + board[3])
-    print(bright_yellow + '     |     |')
+    green = "\033[0;32m"
+    print(green  + '     |     |')
+    print(green  + '7: ' + bright_yellow +  board[7] + green  +' |8: '+ bright_yellow  + board[8] + green  +' |9: '+ bright_yellow + board[9])
+    print(green  + '     |     |')
+    print(green  + '------------------')
+    print(green  + '     |     |')
+    print(green  + '4: ' + bright_yellow +  board[4] + green  +' |5: '+ bright_yellow  + board[5] + green  +' |6: '+ bright_yellow + board[6])
+    print(green  + '     |     |')
+    print(green  + '------------------')
+    print(green  + '     |     |')
+    print(green  + '1: ' + bright_yellow +  board[1] + green  +' |2: '+ bright_yellow  + board[2] + green  +' |3: '+ bright_yellow + board[3])
+    print(green  + '     |     |')
 # user_choice()
-bright_yellow = "\033[0;93m"
-test_board = ['#','#','#','X','O','X','O','X','O','X']
+
+test_board = ['#','#','#','#','#','#','#','#','#','#']
 display_board(test_board)
 
-print(bright_yellow + "Hello world")
+# print(bright_yellow + "Hello world")

@@ -54,7 +54,7 @@ def gameon_choice():
     choice = 'wrong'
 
     # While the choice is not a digit, keep asking for input.
-    while choice not in ['Y','N']:
+    while choice not in ['X','O']:
 
         # we shouldn't convert here, otherwise we get an error on a wrong input
         choice = input("Would you like to keep playing? Y or N ")
