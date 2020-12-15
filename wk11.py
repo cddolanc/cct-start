@@ -31,12 +31,13 @@
 import random
 ran1 = (random.randint(0,101))
 print(ran1)
+lst = [0]
 lst = input('Please guess a number between 1 and 100: ')
 
 print(lst)
 
 while lst != ran1:
     print('Please try again: ')
-    
+    lst
     if lst == ran1:
         print('Correct!')
