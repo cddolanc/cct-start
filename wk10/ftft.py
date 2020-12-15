@@ -1,9 +1,9 @@
 #------Global variables---------
 
 # Game Board
-board = ["-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-", "-"]
+board = ["#", "-", "-", "-",
+            "-", "-","-",
+             "-", "-", "-"]
 
 
 # If game is still going        
@@ -14,14 +14,17 @@ winner = None
 
 
 # Whos turn is it?
-current_player = 'X'
+def current_player():
+    current_player = input('Welcome To Tic-Tac-Toe!\n Please choose X or O: ').upper()
+    if current_player != 'X' or current_player != 'O':
+        current_player = False
 
 # The game........................
 def play_game():
-
+    #print('Welcome To Tic-Tac-Toe!')
     # Display initial board
     display_board()
-
+    
 
     #While the game continues.....
     while game_continues:
@@ -58,18 +61,29 @@ def display_board():
     print(green  + '     |     |')
 
 def handle_turn(player):
+
+    print(player + "'s turn.")
     position = input('Choose a position from 1-9: ')
-    position = int(position)
+    
+    valid = False
+    while not valid:
 
+        while position not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            position = input('Try again. Choose a position from 1-9: ')
 
-    board[position] = 'X'
+        position = int(position)
+
+        if board[position] == "-":
+            valid = True
+        else:
+            print("You can choose that one, try again: ")
+
+    board[position] = player
     display_board()
 
 
 def check_game_over():
-
     check_win()
-
     check_tie()
 
 
@@ -98,24 +112,15 @@ def check_win():
     else:
         winner = None
 
-    
-     #((board[7] == sym and board[8] == sym and board[9] == sym) or # top
-    # (board[4] == sym and board[5] == sym and board[6] == sym) or     # middle     
-    # (board[1] == sym and board[2] == sym and board[3] == sym) or     # bottom
-    # (board[7] == sym and board[5] == sym and board[3] == sym) or     # diagonal
-    # (board[1] == sym and board[5] == sym and board[9] == sym) or     # diagonal
-    # (board[7] == sym and board[4] == sym and board[1] == sym) or     # left
-    # (board[8] == sym and board[5] == sym and board[2] == sym) or     # center
-    # (board[9] == sym and board[6] == sym and board[3] == sym))       # right 
     return
 
 def check_rows():
     # set global variable
     global game_continues
     # check if rows have same value and not '-'
-    row_1 = board[7] == board[8] == board[9] != '_'
-    row_2 = board[4] == board[5] == board[6] != '_'
-    row_3 = board[1] == board[2] == board[3] != '_'
+    row_1 = board[7] == board[8] == board[9] != '-'
+    row_2 = board[4] == board[5] == board[6] != '-'
+    row_3 = board[1] == board[2] == board[3] != '-'
     
     # if column has a match, then flag there is a winner
     if row_1 or row_2 or row_3:
@@ -137,9 +142,9 @@ def check_columns():
     # set global variable
     global game_continues
     # check if columns have same value and not '-'
-    column_1 = board[1] == board[4] == board[7] != '_'
-    column_2 = board[2] == board[5] == board[8] != '_'
-    column_3 = board[3] == board[6] == board[9] != '_'
+    column_1 = board[1] == board[4] == board[7] != '-'
+    column_2 = board[2] == board[5] == board[8] != '-'
+    column_3 = board[3] == board[6] == board[9] != '-'
 
     # if column has a match, then flag there is a winner
     if column_1 or column_2 or column_3:
@@ -159,8 +164,8 @@ def check_diagonals():
     # set global variable
     global game_continues
     # check if diagonals have same value and not '-'
-    diagonal_1 = board[1] == board[5] == board[9] != '_'
-    diagonal_2 = board[3] == board[5] == board[7] != '_'
+    diagonal_1 = board[1] == board[5] == board[9] != '-'
+    diagonal_2 = board[3] == board[5] == board[7] != '-'
     
     # if diagonal has a match, then flag there is a winner
     if diagonal_1 or diagonal_2:
@@ -176,10 +181,22 @@ def check_diagonals():
 
 
 def check_tie():
+    global game_continues
+    if "-" not in board:
+        game_continues = False
+        
     return
 
 
 def flip_player():
+    # global variable we need
+    global current_player
+    # If current player was X, change to O
+    if current_player == "X":
+        current_player = "O"
+    # If current player was O, change to X
+    elif current_player == "O":
+        current_player ="X"
     return
 
 
