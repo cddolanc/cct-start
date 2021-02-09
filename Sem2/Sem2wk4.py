@@ -101,7 +101,7 @@
 # pip install lxml
 # pip install bs4
 
-import requests
+# import requests
 
 # # Step 1: Use the requests library to grab the page
 # # Note, this may fail if you have a firewall blocking Python/Jupyter 
@@ -112,7 +112,7 @@ import requests
 
 # print(res.text)
 
-import bs4
+# import bs4
 
 # soup = bs4.BeautifulSoup(res.text,"lxml")
 
@@ -137,24 +137,69 @@ import bs4
 # for item in soup.select(".mw-headline"):
 #     print(item.text)
 
+# import requests
+# import bs4
+
+# base_url = 'http://books.toscrape.com/catalogue/page-{}.html'
+
+
+# # res = requests.get(base_url.format(n))
+
+# soup = bs4.BeautifulSoup(res.text,"lxml")
+
+# two_star_books = []
+
+# for n in range(1,51):
+
+#     res = requests.get(base_url.format(n))
+
+#     for book in soup.select(".product_pod"):
+#             if book.select('.Two'):
+#                 two_star_books.append(book.select('a')[1]['title'])
+
+#     print(two_star_books)
+
+# soup.select(".product_pod")
+
+# products = soup.select(".product_pod")
+
+# example = products[0]
+
+# type(example)
+
+# print(example.attrs)
+
+# print(list(example.children))
+
+# print(example.select('.star-rating.Two'))
+
+
+
+
+
+import requests
+import bs4
+import lxml
+
 base_url = 'http://books.toscrape.com/catalogue/page-{}.html'
 
-res = requests.get(base_url.format('1'))
+two_star_books = []
 
-print(res)
+for n in range(1,51):
 
-soup = bs4.BeautifulSoup(res.text,"lxml")
+    res = requests.get(base_url.format(n))
 
-soup.select(".product_pod")
+    soup = bs4.BeautifulSoup(res.text,"lxml")
+    # Thanks to Michael
+    for book in soup.select('.product_pod'):
+        if book.select('.Two'):
+            two_star_books.append(book.select('a')[1]['title'])
+    print(n)
+    
+print(two_star_books)
 
-products = soup.select(".product_pod")
-
-example = products[0]
-
-type(example)
-
-print(example.attrs)
-
-list(example.children)
-
-print(example.select('.star-rating.Three'))
+# from bs4 import BeautifulSoup
+# import requests
+# page = requests.get('https://forecast.weather.gov/MapClick.php?lat=47.19044000000008&lon=-122.29563999999999#.Xq3cLZl7lPY')
+# soup = BeautifulSoup(page.text, 'lxml')
+# print(soup)
