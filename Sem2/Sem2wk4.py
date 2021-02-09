@@ -103,19 +103,58 @@
 
 import requests
 
-# Step 1: Use the requests library to grab the page
-# Note, this may fail if you have a firewall blocking Python/Jupyter 
-# Note sometimes you need to run this twice if it fails the first time
-res = requests.get("http://www.example.com")
+# # Step 1: Use the requests library to grab the page
+# # Note, this may fail if you have a firewall blocking Python/Jupyter 
+# # Note sometimes you need to run this twice if it fails the first time
+# res = requests.get("http://www.example.com")
 
-print(type(res))
+# print(type(res))
 
-print(res.text)
+# print(res.text)
 
 import bs4
 
+# soup = bs4.BeautifulSoup(res.text,"lxml")
+
+# print(soup)
+
+# print(soup.select('title'))
+
+# title_tag = soup.select('title')
+# title_tag[0]
+# type(title_tag[0])
+# print(title_tag[0].getText())
+
+
+# # First get the request
+# res = requests.get('https://en.wikipedia.org/wiki/Yuri_Gagarin')
+# # Create a soup from request
+# soup = bs4.BeautifulSoup(res.text,"lxml")
+
+# # note depending on your IP Address,
+# # this class may be called something different
+# soup.select(".mw-headline")
+# for item in soup.select(".mw-headline"):
+#     print(item.text)
+
+base_url = 'http://books.toscrape.com/catalogue/page-{}.html'
+
+res = requests.get(base_url.format('1'))
+
+print(res)
+
 soup = bs4.BeautifulSoup(res.text,"lxml")
 
-print(soup)
+soup.select(".product_pod")
 
-print(soup.select('title'))
+products = soup.select(".product_pod")
+
+example = products[0]
+
+type(example)
+
+print(example.attrs)
+
+list(example.children)
+
+print(example.select('.star-rating.Three'))
