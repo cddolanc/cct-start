@@ -60,12 +60,44 @@ class LocalGetSections(object):
 ################################################
 
 courseid = "12" # Exchange with valid id.
-# Get all sections of the course.
+# # Get all sections of the course.
 sec = LocalGetSections(courseid)
-# Get sections ids of the course with the given numbers.
-# sec = LocalGetSections(courseid, [0, 1, 2, 3, 5, 6])
-# # Get sections ids of the course with the given ids.
-# sec = LocalGetSections(courseid, [], [7186, 7187, 7188, 7189])
-# # Get sections ids of the course with the given numbers and given ids.
-# sec = LocalGetSections(courseid, [0, 1, 2, 3, 5, 6], [7186, 7187, 7188, 7189])
+# # Get sections ids of the course with the given numbers.
+# # sec = LocalGetSections(courseid, [0, 1, 2, 3, 5, 6])
+# # # Get sections ids of the course with the given ids.
+# # sec = LocalGetSections(courseid, [], [7186, 7187, 7188, 7189])
+# # # Get sections ids of the course with the given numbers and given ids.
+# # sec = LocalGetSections(courseid, [0, 1, 2, 3, 5, 6], [7186, 7187, 7188, 7189])
 print(sec.getsections)
+
+
+
+
+
+
+# Takes a dictionary of links to Moodle pages and returns a dictionary
+# of download links to all of the PDF files on those pages
+# def get_links(session, page_links):
+#     links_to_pdfs = {}
+#     for subject in page_links:
+#         html = session.get(page_links[subject]).text
+#         soup = BeautifulSoup(html, "lxml")
+#         data = soup.find_all("li", attrs={"class": "activity resource"})
+#         links_to_pdfs[subject] = {}
+#         dup = 0 # Count duplicate file names to prevent overwriting dictionary values
+
+#         # Store PDF links in a dictionary
+#         for li in data:
+#             links = li.find_all("a")
+#             for a in links:
+#                 if "PDF document" in a.text:
+#                     doc_name = a.text.replace(" PDF document", "")
+#                     if doc_name in links_to_pdfs[subject]:
+#                         dup += 1
+#                         links_to_pdfs[subject][doc_name + "_" + str(dup)] = a["href"]
+#                     else:
+#                         links_to_pdfs[subject][doc_name] = a["href"]
+
+#     return links_to_pdfs
+
+#     print(get_links)
